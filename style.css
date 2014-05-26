@@ -1,0 +1,98 @@
+html, body, #container {
+	height: 99.7%;
+}
+
+body > #container {
+	height: auto;
+	min-height: 99.7%;
+}
+
+/* Everything above should be ignored */
+
+body {
+	background-color: #2d2d2d;	/* Change background color */
+	margin: 0px 0px 0px 0px;
+}
+
+#container {
+    position : relative;
+    width : 960px;
+    height : 100%;
+    margin-left : auto;
+    margin-right: auto;
+    margin-top : auto;
+}
+
+td, th {
+	text-align: center;
+	font-family: "Muli";
+}
+
+th {
+	font-size: 34px;
+	color: #3cbc9c;	/* Change color of the table headers */
+	font-weight: 400;
+	padding-bottom: 20px;
+	text-shadow: 2px 1px 10px #000000;
+}
+
+td {
+	font-size: 24px;
+	font-weight: 300;
+	padding-bottom: 5px;
+}
+
+/* Change color of links/table elements */
+
+a:link {
+	color: #f8fbc7;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #f8fbc7;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #d3d794;
+}
+
+#time {	/* The style for the clock */
+	position: relative;
+	text-align: center;
+	font-size: 62px;
+	font-family: "Muli";
+	letter-spacing: 5px;
+	font-weight: 300;
+	color: #f8fbc7;
+	text-shadow: 3px 3px 10px #000000;
+	padding-top: 25%;
+}
+
+table {
+	padding-top: 50px;
+}
+
+#underline {	/* The line at the bottom - fueled by magic */
+	clear: both;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	z-index: 10;
+	background-color: #3cbc9c;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* This makes the page responsive (change it's size with the window) */
+
+@media screen and (max-width: 950px) {
+	#container {
+		width: 100%;
+	}
+
+	#underline {
+		width: 100%;
+	}
+}

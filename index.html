@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" type="image/ico" href="favicon.ico" />
+		<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Home</title>
+	</head>
+	<body onload="updateClock()">
+		<div id="container">
+		<div id="time"></div>
+			<table width="100%">
+				
+				<tr>
+					<th>Favorite</th>
+					<th>Media</th>
+					<th>Reddit</th>
+					<th>Code</th>
+				</tr>
+
+				<tr>
+					<td><a href="http://www.twitch.tv/">Twitch</a></td>		<!--Favorite-->
+					<td><a href="https://www.youtube.com/">Youtube</a></td>		<!--Media-->
+					<td><a href="http://www.reddit.com/r/all/">All</a></td>		<!--Reddit-->
+					<td><a href="http://www.codecademy.com/dashboard">Codecademy</a></td>	<!--Code-->
+				</tr>
+
+				<tr>
+					<td><a href="http://explosm.net/comics/3568/">Explosm</a></td>
+					<td><a href="http://www.pandora.com/station/play/2030811669776593180">Pandora</a></td>
+					<td><a href="http://www.reddit.com/">Front</a></td>
+					<td><a href="http://www.reddit.com/r/learnprogramming">/r/learn</a></td>
+				</tr>
+
+				<tr>
+					<td><a href="http://filelist.ro/">Filelist</a></td>
+					<td><a href="http://www.last.fm/home">last.fm</a></td>
+					<td><a href="http://www.reddit.com/r/videos">Videos</a></td>
+					<td><a href="http://www.addedbytes.com/cheat-sheets/">Cheat Sheets</a></td>
+				</tr>
+
+				<tr>
+					<td><a href="chrome-extension://bigefpfhnfcobdlfbedofhhaibnlghod/mega/secure.html#fm/Xx4iwJYI">Mega</a></td>
+					<td><a href="https://imgur.com/">imgur</a></td>
+					<td><a href="http://www.reddit.com/r/AskReddit">Askreddit</a></td>
+					<td><a href="https://github.com/">Github</a></td>
+				</tr>
+
+			</table>			
+		</div>
+		<div id="underline"></div>
+	</body>
+
+	<!--Clock script-->
+
+	<script>
+                function updateClock()
+                {
+                        Date.getMinutesTwoDigits = function()
+                        {
+                                var retval = now.getMinutes();
+                                if (retval < 10) return ("0" + retval.toString());
+                                else return retval.toString();
+                        }
+                        Date.getHoursModTwelve = function()
+                        {
+                                var retval = now.getHours();
+                                retval = retval%12;
+                                if (retval == 0) retval = 12;
+                                return retval;
+                        }
+                        var now = new Date(),
+                        time = Date.getHoursModTwelve() + ':' + Date.getMinutesTwoDigits();
+                        document.getElementById('time').innerHTML = ["", time].join('');
+                        setTimeout(updateClock, 1000);
+                }
+    </script>
+
+</html>
